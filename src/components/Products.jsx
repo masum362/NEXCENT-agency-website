@@ -7,6 +7,7 @@ import brand3 from '../assets/icons/brand3.png'
 import brand4 from '../assets/icons/brand4.png'
 import brand5 from '../assets/icons/brand5.png'
 import brand6 from '../assets/icons/brand6.png'
+import arrow from '../assets/arrow.png'
 
 const Products = () => {
     return (
@@ -47,7 +48,7 @@ const Products = () => {
                                     <img src={brand5} alt="" className='cursor-pointer '/>
                                     <img src={brand6} alt="" className='cursor-pointer '/>
                                 </div>
-                                <a href="#" className='text-branchPrimary font-bold hover:text-neutralDGray'>Meet all customers <img src='./src/assets/arrow.png' alt='arrow' className='inline-block ml-0' /></a>
+                                <a href="#" className='text-branchPrimary font-bold hover:text-neutralDGray'>Meet all customers <img src={arrow} alt='arrow' className='inline-block ml-0' /></a>
                             </div>
                         </div>
                     </div>

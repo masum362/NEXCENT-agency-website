@@ -2,6 +2,7 @@ import React from 'react'
 import img1 from '../assets/blog1.png'
 import img2 from '../assets/blog2.png'
 import img3 from '../assets/blog3.png'
+import arrow from '../assets/arrow.png'
 
 const Blog = () => {
     const blogs = [
@@ -20,7 +21,7 @@ const Blog = () => {
                     <img src={blog.img} alt="" className='hover:scale-95 transition-all  duration-300' />
                     <div className='text-center px-4 py-8 bg-white shadow-lg rounded-md md:w-3/4 mx-auto absolute left-0 right-0 -bottom-12'>
                     <h2 className='text-xl py-3 font-semibold text-neutralDGray'>{blog.title}</h2>
-                    <a href="#" className='text-branchPrimary font-bold hover:text-neutralDGray'>Readmore <img src='./src/assets/arrow.png' alt='arrow' className='inline-block ml-0' /></a>
+                    <a href="#" className='text-branchPrimary font-bold hover:text-neutralDGray'>Readmore <img src={arrow} alt='arrow' className='inline-block ml-0' /></a>
                     </div>
                     </div>)}
             </div>

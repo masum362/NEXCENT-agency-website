@@ -27,8 +27,9 @@ const Navbar = () => {
 
         return () => {
             window.addEventListener('scroll', handleScroll)
+            console.log('calling scroll event')
         }
-    })
+    },[isSticky])
 
     const navItems = [
         { link: 'Home', path: 'home' },
@@ -41,7 +42,7 @@ const Navbar = () => {
 
     return (
         <header className='w-full bg-white md:bg-transparent fixed top-0 left-0 right-0 '>
-            <nav className={`py-4 lg:px-14 px-4 ${isSticky && 'sticky top-0 left-0 right-0 border-b bg-white duration-300' } `}>
+            <nav className={`py-4 lg:px-14 px-4 sticky top-0 left-0 right-0 border-b bg-white duration-300 `}>
                 <div className='flex justify-between items-center text-base gap-8 '>
                     <a href="#" className=' text-2xl font-semibold flex items-center space-x-4'> <img src={logo} alt="logo" className='w-10 inline-block items-center' /><span className=' uppercase text-branchSecondary'>Nexcent</span> </a>
 
@@ -72,14 +73,14 @@ const Navbar = () => {
 
                 {/* menu items for mobile device */}
                 <div className={`space-y-4 px-7 mt-16 py-7 bg-branchPrimary ${isMenuOpen ? 'fixed top-0 left-0 right-0' : 'hidden'} flex flex-col justify-start items-start md:hidden`}>
-               
-                        {
-                            navItems.map(item => <Link to={item.path} key={item.link} spy={true} smooth={true} offset={-100} className='block md:hidden text-lg text-white cursor-pointer first:font-medium text-left '>{item.link}</Link>
+
+                    {
+                        navItems.map(item => <Link to={item.path} key={item.link} spy={true} smooth={true} offset={-100} className='block md:hidden text-lg text-white cursor-pointer first:font-medium text-left '>{item.link}</Link>
 
 
-                            )
-                        }
-                   
+                        )
+                    }
+
 
                 </div>
 
