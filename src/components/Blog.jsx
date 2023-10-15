@@ -1,10 +1,13 @@
 import React from 'react'
+import img1 from '../assets/blog1.png'
+import img2 from '../assets/blog2.png'
+import img3 from '../assets/blog3.png'
 
 const Blog = () => {
     const blogs = [
-        {id:1 , title : 'Creating Streamlined Safeguarding Processes with OneRen', img:'./src/assets/blog1.png'},
-        {id:2 , title : 'What are your safeguarding responsibilities and how can you manage them?', img:'./src/assets/blog2.png'},
-        {id:3 , title : 'Revamping the Membership Model with Triathlon Australia', img:'./src/assets/blog3.png'},
+        {id:1 , title : 'Creating Streamlined Safeguarding Processes with OneRen', img:img1},
+        {id:2 , title : 'What are your safeguarding responsibilities and how can you manage them?', img:img2},
+        {id:3 , title : 'Revamping the Membership Model with Triathlon Australia', img:img3},
     ]
     return (
         <div className='px-4 lg:px-14 max-w-screen-xl mx-auto my-12'>
