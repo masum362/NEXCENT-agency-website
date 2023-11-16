@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../assets/icon.svg'
-import { Link } from 'react-scroll'
+// import { Link } from 'react-scroll'
 
 import { FaXmark, FaBars } from "react-icons/fa6";
+import { NavLink,Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -32,7 +33,7 @@ const Navbar = () => {
     },[isSticky])
 
     const navItems = [
-        { link: 'Home', path: 'home' },
+        { link: 'Home', path: '/' },
         { link: 'Services', path: 'services' },
         { link: 'About', path: 'about' },
         { link: 'Product', path: 'product' },
@@ -41,10 +42,10 @@ const Navbar = () => {
     ]
 
     return (
-        <header className='w-full bg-white md:bg-transparent fixed top-0 left-0 right-0 '>
+        <header className='w-full bg-white  fixed top-0 left-0 right-0 z-20'>
             <nav className={`py-4 lg:px-14 px-4 sticky top-0 left-0 right-0 border-b bg-white duration-300 `}>
                 <div className='flex justify-between items-center text-base gap-8 '>
-                    <a href="#" className=' text-2xl font-semibold flex items-center space-x-4'> <img src={logo} alt="logo" className='w-10 inline-block items-center' /><span className=' uppercase text-branchSecondary'>Nexcent</span> </a>
+                    <Link to='/' className='cursor-pointer text-2xl font-semibold flex items-center space-x-4'> <img src={logo} alt="logo" className='w-10 inline-block items-center' /><span className=' uppercase text-branchSecondary'>Nexcent</span> </Link>
 
                     {/* mapping the nav items  */}
                     <ul className='md:flex hidden space-x-12'>
@@ -59,8 +60,8 @@ const Navbar = () => {
                     {/* btn for lg screen only */}
 
                     <div className='space-x-12 hidden lg:flex items-center'>
-                        <a href="#" className='hidden lg:flex  text-branchPrimary hover:text-neutralDGray'>Login</a>
-                        <button className='bg-branchPrimary text-white hover:bg-neutralDGray rounded py-2 px-4 transition-all duration-300'>Register Now</button>
+                        <NavLink to={'/login'} className='hidden lg:flex  text-branchPrimary hover:text-neutralDGray'>Login</NavLink>
+                        <NavLink to={'/register'} className='bg-branchPrimary text-white hover:bg-neutralDGray rounded py-2 px-4 transition-all duration-300'>Register Now</NavLink>
                     </div>
 
                     {/* btn for mobile menu  */}
