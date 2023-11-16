@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import logo from '../assets/icon.svg'
-// import { Link } from 'react-scroll'
+import { Link } from 'react-scroll'
 
 import { FaXmark, FaBars } from "react-icons/fa6";
-import { NavLink,Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -30,10 +30,9 @@ const Navbar = () => {
             window.addEventListener('scroll', handleScroll)
             console.log('calling scroll event')
         }
-    },[isSticky])
+    }, [isSticky])
 
     const navItems = [
-        { link: 'Home', path: '/' },
         { link: 'Services', path: 'services' },
         { link: 'About', path: 'about' },
         { link: 'Product', path: 'product' },
@@ -45,10 +44,12 @@ const Navbar = () => {
         <header className='w-full bg-white  fixed top-0 left-0 right-0 z-20'>
             <nav className={`py-4 lg:px-14 px-4 sticky top-0 left-0 right-0 border-b bg-white duration-300 `}>
                 <div className='flex justify-between items-center text-base gap-8 '>
-                    <Link to='/' className='cursor-pointer text-2xl font-semibold flex items-center space-x-4'> <img src={logo} alt="logo" className='w-10 inline-block items-center' /><span className=' uppercase text-branchSecondary'>Nexcent</span> </Link>
+                  
+                    <NavLink to='/' className='cursor-pointer text-2xl font-semibold flex items-center space-x-4'> <img src={logo} alt="logo" className='w-10 inline-block items-center' /><span className=' uppercase text-branchSecondary'>Nexcent</span> </NavLink>
 
                     {/* mapping the nav items  */}
                     <ul className='md:flex hidden space-x-12'>
+                    <NavLink to={'/'} className='block text-base text-neutralDGray hover:text-branchPrimary cursor-pointer first:font-medium'>Home</NavLink>
                         {
                             navItems.map(item => <Link to={item.path} key={item.link} spy={true} smooth={true} offset={-100} className='block text-base text-neutralDGray hover:text-branchPrimary cursor-pointer first:font-medium'>{item.link}</Link>
 
